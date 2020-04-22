@@ -12,7 +12,7 @@
 			<referenceBlock name="catalog.compare.sidebar" remove="true"/>
 			<referenceBlock name="sale.reorder.sidebar" remove="true"/>
         </referenceContainer>
-<!-- 		<move element="page.main.title" destination="product.info.main" before="-"/> -->
+		<move element="page.main.title" destination="product.info.main" before="-"/>
         <move element="product.info.media" destination="product.inner" before="-"/>
         <move element="product.info.main" destination="product.inner" after="product.info.media"/>
         <!-- class product-img-box is require -->
