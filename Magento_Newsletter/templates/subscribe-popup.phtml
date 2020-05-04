@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2015 Magento. All rights reserved.
+ * Copyright © 2019 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -19,30 +19,7 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
             action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
             method="post"
             id="newsletter-popup-validate-detail">
-			<div class="block-content">
-			    <div class="block-title">
-                    <strong><span><?php echo __('Newsletter') ?></span></strong>
-                </div>
-				<img src="<?php echo $block->getViewFileUrl('images/alothemes/subscribe.png')?>" alt=""/>
-			    <h2 class="promo-panel-text promo-text"><?php echo __('To get notified about the latest news and updates') ?><br><?php echo __('No spam, we promise') ?></h2>
-				<div class="subcribe-box newsletter-new clearfix">
-					<div class="field newsletter input-box">
-						<div class="control">
-							<input name="email" type="email" id="newsletter-popup" class="input-text"
-										placeholder="<?php /* @escapeNotVerified */ echo __('Enter your email address') ?>"
-										data-validate="{required:true, 'validate-email':true}"/>
-						</div>
-					</div>
-					<div class="actions">
-						<button class="action subscribe button" title="<?php /* @escapeNotVerified */ echo __('Subscribe') ?>" type="submit">
-							<span><?php /* @escapeNotVerified */ echo __('Subscribe') ?></span>
-						</button>
-					</div>
-				</div>
-				<div class="subscribe-bottom">
-                    <input type="checkbox" /><?php echo __('Don’t show this popup again'); ?>
-                </div>
-			</div>
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('newsletter_popup')->toHtml();?>
         </form>
     </div>
 </div>
@@ -79,10 +56,10 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
 	                    popup.modal('openModal');
 	                    $(".modal-popup .modal-inner-wrap").css({ "width":pwidth, "height":pheight }); 
 	                }, timeDelay);
-	                if(Themecfg.newsletter.autoClose > 0) setTimeout(function(){$.fancybox.close()}, timeClose);
+	                if(Themecfg.newsletter.autoClose > 0) setTimeout(function(){ popup.modal('closeModal') }, timeClose);
 	                $('.subscribe-bottom input', popup).on('click', function(){
 	                    if($(this).parent().find('input:checked').length){
-	                        $.cookie('popupNewsletterOff', true);
+	                        $.cookie('popupNewsletterOff', true, { expires : 10, domain: document.domain});
 	                    } else {
 	                        $.cookie('popupNewsletterOff', undefined);
 	                    }
@@ -95,6 +72,9 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
 							$.cookie('popupNewsletterMessages', true, {domain: document.domain});
 						}
 	                });
+	                $('.not-interested').click(function() {
+	                	popup.modal('closeModal');
+					});
 	            } else {
 	                if($.cookie('popupNewsletterMessages')){
 	                    var $messages = $('.messages').attr('id', 'popupNewsletterMessages').wrap( "<div></div>" );
