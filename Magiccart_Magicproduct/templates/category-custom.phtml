@@ -6,7 +6,7 @@
  * @license 	http://www.magiccart.net/license-agreement.html
  * @Author: DOng NGuyen<nguyen@dvn.com>
  * @@Create Date: 2016-01-08 22:57:12
- * @@Modify Date: 2018-03-14 23:54:25
+ * @@Modify Date: 2020-05-04 23:54:25
  * @@Function:
  */
  ?>
@@ -14,8 +14,7 @@
 <?php $selector = 'alo-content-'.rand(0,999999999); ?>
 <div class= "<?php /* @escapeNotVerified */ echo $selector?> magicproduct magiccategory magiccategory-custom autoplay">
 <?php
-$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$_category = $_objectManager->create('Magento\Catalog\Model\Category')->load($this->getCategoryId());
+$_category = $this->getCategory();
 $tabs = $this->getTabs();
 $numTabs = count($tabs);
 if($numTabs): ?>
