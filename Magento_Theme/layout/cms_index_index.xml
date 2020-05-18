@@ -17,7 +17,7 @@
     	<referenceContainer name="page.bottom.container">
             <block class="Magento\Cms\Block\Block" name="block.content.bottom">
                 <arguments>
-                    <argument name="block_id" xsi:type="string">block-page-bottom</argument>
+                    <argument name="block_id" xsi:type="string">block_page_bottom</argument>
                 </arguments>
             </block>
         </referenceContainer>
