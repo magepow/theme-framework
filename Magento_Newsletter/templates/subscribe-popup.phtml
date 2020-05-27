@@ -26,8 +26,8 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
 <script type="text/javascript">
 	require(['jquery', 'jquery/jquery.cookie', 'Magento_Ui/js/modal/modal'], 
 		function($, cookie, modal){
+			"use strict";
 			if(!parseInt(Themecfg.newsletter.enabled)) return;
-	        
 	        (function(selector){
 	            var popupCookie = $.cookie('popupNewsletterOff');
 	            var overlay = Themecfg.newsletter.overlayColor;
