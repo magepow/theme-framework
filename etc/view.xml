@@ -77,14 +77,14 @@
                 <height>110</height>
             </image>
             <image id="product_page_image_large" type="image"/>
-			<image id="product_page_image_large_no_frame" type="image"> <!-- magento 2.1.6 -->
+            <image id="product_page_image_large_no_frame" type="image"> <!-- magento 2.1.6 -->
                 <frame>false</frame>
             </image>
             <image id="product_page_image_medium" type="image">
                 <width>650</width>
                 <height>650</height>
             </image>
-			<image id="product_page_image_medium_no_frame" type="image"> <!-- magento 2.1.6 -->
+            <image id="product_page_image_medium_no_frame" type="image"> <!-- magento 2.1.6 -->
                 <width>650</width>
                 <height>650</height>
                 <frame>false</frame>
@@ -270,8 +270,23 @@
         <item type="directory">Magento_Tinymce3::tiny_mce</item>
         <item type="file">Magiccart_Alothemes::js/plugins/bootstrap.js</item>
         <item type="file">Magiccart_Alothemes::js/plugins/bootstrap.min.js</item>
+        <item type="file">Magiccart_Alothemes::js/plugins/wow.min.js</item>
+        <item type="file">Magiccart_Alothemes::js/plugins/sticky-kit.min.js</item>
+        <item type="file">Magiccart_Alothemes::js/plugins/jquery.elevatezoom.js</item>
+        <item type="file">Magiccart_Alothemes::js/plugins/jquery.elevatezoom.min.js</item>
+        <item type="file">Magiccart_Lookbook::js/jquery.easypin.min.js</item>
+        <item type="file">Magiccart_Magicproduct::js/plugins/slick.min.js</item>
+        <item type="file">Magiccart_Testimonial::js/plugins/slick.min.js</item>
+
         <item type="file">Magepow_Ajaxcart::js/owl.carousel.js</item>
         <item type="file">Magepow_Ajaxcart::js/owl.carousel.min.js</item>
+
+        <item type="file">Magefan_Blog::js/jquery.fancybox.min.js</item>
+        <item type="file">Magefan_Blog::js/jquery.tagcanvas.min.js</item>
+        <item type="file">Magefan_Blog::js/lib/masonry.pkgd.min.js</item>
+        <item type="file">bootstrap/js/bootstrap.min.js</item>
+        <item type="file">bootstrap/js/bootstrap.bundle.min.js</item>
+
         <!-- Min exclude -->
         <item type="file">Lib::jquery/jquery.min.js</item>
         <item type="file">Lib::jquery/jquery-ui-1.9.2.min.js</item>
