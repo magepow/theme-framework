@@ -278,9 +278,6 @@
         <item type="file">Magiccart_Magicproduct::js/plugins/slick.min.js</item>
         <item type="file">Magiccart_Testimonial::js/plugins/slick.min.js</item>
 
-        <item type="file">Magepow_Ajaxcart::js/owl.carousel.js</item>
-        <item type="file">Magepow_Ajaxcart::js/owl.carousel.min.js</item>
-
         <item type="file">Magefan_Blog::js/jquery.fancybox.min.js</item>
         <item type="file">Magefan_Blog::js/jquery.tagcanvas.min.js</item>
         <item type="file">Magefan_Blog::js/lib/masonry.pkgd.min.js</item>
