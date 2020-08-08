@@ -10,8 +10,8 @@
  * @@Function:
  */
  ?>
-<?php if($this->getStatus() == 2) return; ?>
-<?php $selector = 'alo-content-'.rand(0,999999999); ?>
+<?php if(!$this->getStatus()) return; ?>
+<?php $selector = 'alo-content-'.uniqid(); ?>
 <div class= "<?php echo /* @escapeNotVerified */ $selector?> magicproduct autoplay">
 <?php
 $tabs = $this->getTabs();
