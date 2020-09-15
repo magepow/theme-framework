@@ -5,7 +5,11 @@
  */
 
 // @codingStandardsIgnoreFile
-
+$_tabHelper = $this->helper('Magiccart\Alothemes\Helper\Tab');
+?>
+<?php
+    $blockTabs     = $_tabHelper->getBlockTab();
+    $attributeTabs = $_tabHelper->getAttributeTab();
 ?>
 <?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
     <div class="product info detailed">
@@ -37,6 +41,59 @@
                     <?php /* @escapeNotVerified echo $html; */ ?>
                 </div> -->
 
+                <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
+            <?php endforeach;?>
+            <?php foreach ($blockTabs as $tab):?>
+                <?php 
+                    if( isset($tab['status']) && !$tab['status'] ) {
+                        continue;
+                    }
+                    $alias = $tab['block'];
+                    $html  = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($alias)->toHtml();
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $label = $tab['title'];
+                ?>
+                <div class="data item title"
+                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
+                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
+                    <a class="data switch"
+                       tabindex="-1"
+                       data-toggle="switch"
+                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
+                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
+                        <?php /* @escapeNotVerified */ echo $label; ?>
+                    </a>
+                </div>
+                <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
+            <?php endforeach;?>
+            <?php foreach ($attributeTabs as $tab):?>
+                <?php 
+                    if( isset($tab['status']) && !$tab['status'] ) {
+                        continue;
+                    }
+                    $alias   = $tab['attribute'];
+                    $product = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes')->getProduct();
+                    echo $product->getName();
+                    $block->setProduct($product);
+                    $html    = $this->helper('Magento\Catalog\Helper\Output')->productAttribute($block->getProduct(), $block->getProduct()->getData($alias), $alias);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $label = $tab['title'];
+                ?>
+                <div class="data item title"
+                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
+                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
+                    <a class="data switch"
+                       tabindex="-1"
+                       data-toggle="switch"
+                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
+                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
+                        <?php /* @escapeNotVerified */ echo $label; ?>
+                    </a>
+                </div>
                 <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
             <?php endforeach;?>
             </div>
