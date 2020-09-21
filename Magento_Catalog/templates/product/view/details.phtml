@@ -5,6 +5,7 @@
  */
 
 // @codingStandardsIgnoreFile
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
 $_tabHelper = $this->helper('Magiccart\Alothemes\Helper\Tab');
 ?>
 <?php
@@ -74,10 +75,25 @@ $_tabHelper = $this->helper('Magiccart\Alothemes\Helper\Tab');
                         continue;
                     }
                     $alias   = $tab['attribute'];
-                    $product = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes')->getProduct();
-                    $block->setProduct($product);
-                    $html    = $this->helper('Magento\Catalog\Helper\Output')->productAttribute($block->getProduct(), $block->getProduct()->getData($alias), $alias);
-                    if (!trim($html)) {
+                    $blockAttribute = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes');
+                    $_product = $blockAttribute->getProduct();
+                    $dataAttribute  = $blockAttribute->getAdditionalData();
+                    $html = '';
+                    if(isset($dataAttribute[$alias])) :
+                        $_data = $dataAttribute[$alias];
+                        $html .= '<table class="data table additional-attributes ' . $_data['code'] . '">';
+                        $html .= '<tbody>';
+                        $html .= '<tr>';
+                        $html .=    '<th class="col label" scope="row">' . $block->escapeHtml($_data['label']) . '</th>';
+                        $html .=    '<td class="col data" data-th="' . $block->escapeHtmlAttr($_data['label']) . '">' . $_helper->productAttribute($_product, $_data['value'], $_data['code']) . '</td>';
+                        $html .= '</tr>';
+                        $html .= '</tbody>';
+                        $html .= '</table>';
+                    else :
+                        $attributeContent  = $this->helper('Magento\Catalog\Helper\Output')->productAttribute($_product, $_product->getData($alias), $alias);
+                        $html .= is_string($attributeContent) ? $attributeContent : __('The attribute %1 not support show on frontend please choose another attribute.', $alias);
+                    endif;
+                    if ( !trim($html)) {
                         continue;
                     }
                     $label = $tab['title'];
