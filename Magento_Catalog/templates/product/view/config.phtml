@@ -1,0 +1,38 @@
+<?php
+    $_aloHelper     = $this->helper('Magiccart\Alothemes\Helper\Data');
+    $config         = [
+        'cart'      => '.product-info-main .add-to-cart',
+        'compare'   => '.product-info-main .tocompare',
+        'wishlist'  => '.product-info-main .towishlist',
+        'wishlist'  => '.product-info-main .towishlist',
+        'review'    => '.product-info-main .product-reviews-summary'
+    ];
+    $style = '';
+    foreach ($config as $key => $value) {
+        $style .= $_aloHelper->getConfigModule("product_page/$key") ?  '' : $value . '{display:none}';
+    }
+    echo $style ? '<style>' . $style . '</style>' : '';
+    /*
+    echo $_aloHelper->getGridStyle('.category-products .product-items .product-item');
+    */
+    $layout         = $_aloHelper->getConfigModule('product_page/page_layout');
+    $pageLayout     = 'page-layout-' . $layout;
+    if(!$layout) return;
+?>
+<script type="text/javascript">
+require([
+    'jquery'
+], function ($) {
+    var body    = $('body');
+    var layout = '<?php echo $pageLayout ?>';
+    if(!body.hasClass(layout)){
+        body.removeClass (function (index, css) {
+           return (css.match (/(^|\s)page-layout-\S+/g) || []).join(' ');
+        });
+        body.addClass(layout);
+    }
+    if(layout == "page-layout-1column"){
+        $(".columns > .sidebar").remove();
+    }
+});
+</script>
