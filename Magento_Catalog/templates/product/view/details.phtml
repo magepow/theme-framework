@@ -75,7 +75,6 @@ $_tabHelper = $this->helper('Magiccart\Alothemes\Helper\Tab');
                     }
                     $alias   = $tab['attribute'];
                     $product = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes')->getProduct();
-                    echo $product->getName();
                     $block->setProduct($product);
                     $html    = $this->helper('Magento\Catalog\Helper\Output')->productAttribute($block->getProduct(), $block->getProduct()->getData($alias), $alias);
                     if (!trim($html)) {
