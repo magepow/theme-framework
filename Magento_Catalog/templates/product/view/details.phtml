@@ -46,7 +46,7 @@ $_tabHelper = $this->helper('Magiccart\Alothemes\Helper\Tab');
             <?php endforeach;?>
             <?php foreach ($blockTabs as $tab):?>
                 <?php 
-                    if( isset($tab['status']) && !$tab['status'] ) {
+                    if( !isset($tab['enabled'])) {
                         continue;
                     }
                     $alias = $tab['block'];
@@ -71,7 +71,7 @@ $_tabHelper = $this->helper('Magiccart\Alothemes\Helper\Tab');
             <?php endforeach;?>
             <?php foreach ($attributeTabs as $tab):?>
                 <?php 
-                    if( isset($tab['status']) && !$tab['status'] ) {
+                    if( !isset($tab['enabled']) ) {
                         continue;
                     }
                     $alias   = $tab['attribute'];
