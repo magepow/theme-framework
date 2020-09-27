@@ -6,11 +6,11 @@
 
 // @codingStandardsIgnoreFile
 $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
-$_tabHelper = $this->helper('Magiccart\Alothemes\Helper\Tab');
+$_alobHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
 ?>
 <?php
-    $blockTabs     = $_tabHelper->getBlockTab();
-    $attributeTabs = $_tabHelper->getAttributeTab();
+    $blockTabs     = $_alobHelper->getBlockTab();
+    $attributeTabs = $_alobHelper->getAttributeTab();
 ?>
 <?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
     <div class="product info detailed">
