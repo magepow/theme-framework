@@ -24,8 +24,8 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
     </div>
 </div>
 <script type="text/javascript">
-	require(['jquery', 'jquery/jquery.cookie', 'Magento_Ui/js/modal/modal'], 
-		function($, cookie, modal){
+	require(['jquery', 'jquery/jquery.cookie', 'Magento_Ui/js/modal/modal', 'Magento_Ui/js/modal/alert', 'ko'], 
+		function($, cookie, modal, alert, ko){
 			"use strict";
 			if(!parseInt(Themecfg.newsletter.enabled)) return;
 	        (function(selector){
@@ -77,15 +77,19 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
 					});
 	            } else {
 	                if($.cookie('popupNewsletterMessages')){
-	                    var $messages = $('.messages').attr('id', 'popupNewsletterMessages').wrap( "<div></div>" );
-                       	modal({
-                            type: 'popup',
-                            modalClass: 'popup-messages',
-                            responsive: true, 
-                            buttons: false                       	
-                        }, $messages);
-	                    $messages.modal('openModal');
-	                    $.cookie('popupNewsletterMessages', '', {domain: document.domain});
+		                setTimeout(function () {
+		                    var $messages = $('.messages').attr('id', 'popupNewsletterMessages').wrap( "<div></div>" );
+	                       	modal({
+	                            type: 'popup',
+	                            modalClass: 'popup-messages',
+	                            responsive: true, 
+	                            buttons: false                       	
+	                        }, $messages);
+		                    $messages.modal('openModal');
+		                    
+		                     $.cookie('popupNewsletterMessages', '', {domain: document.domain});
+		                }, 1000);
+	                   
 	                }
 	            }
 
