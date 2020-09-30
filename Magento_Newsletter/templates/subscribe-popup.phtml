@@ -24,8 +24,8 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
     </div>
 </div>
 <script type="text/javascript">
-	require(['jquery', 'jquery/jquery.cookie', 'Magento_Ui/js/modal/modal', 'Magento_Ui/js/modal/alert', 'ko'], 
-		function($, cookie, modal, alert, ko){
+	require(['jquery', 'jquery/jquery.cookie', 'Magento_Ui/js/modal/modal'], 
+		function($, cookie, modal){
 			"use strict";
 			if(!parseInt(Themecfg.newsletter.enabled)) return;
 	        (function(selector){
