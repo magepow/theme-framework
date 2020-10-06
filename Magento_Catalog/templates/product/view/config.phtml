@@ -32,7 +32,7 @@ require([
         body.addClass(layout);
     }
     if(layout == "page-layout-1column"){
-        $(".columns > .sidebar").remove();
+        $('head').append('<style type="text/css">.columns > .sidebar{display:none}</style>');
     }
 });
 </script>
