@@ -310,8 +310,41 @@
         <item type="file">Magento_Ui::js/form/components/insert-listing.min.js</item>
         <!-- End min exclude -->
 
+        <item type="file">Amazon_Payment::js/model/place-order-mixin.js</item>
+        <item type="file">Amazon_Payment::js/amazon-widgets-loader.js</item>
+        <item type="file">Amazon_Payment::js/amazon-button.js</item>
+        <item type="file">Amazon_Payment::js/amazon-product-add.js</item>
+        <item type="file">Amazon_Payment::js/amazonPaymentConfig.js</item>
+        <item type="file">Amazon_Payment::js/amazon-core.js</item>
+        <item type="file">Amazon_Payment::js/lib/sjcl.min.js</item>
+        <item type="file">Amazon_Login::js/amazon-logout.js</item>
+        <item type="file">Amazon_Login::js/amazon-redirect.js</item>
+        <item type="file">Amazon_Login::js/amazon-csrf.js</item>
+
+        <item type="file">Klarna_Kp::js/action/override.js</item>
+        <item type="file">Klarna_Onsitemessaging::js/pricebox-widget-mixin.js</item>
+
+        <item type="file">Magento_Captcha::js/captcha.js</item>
+        <item type="file">Magento_Checkout::js/discount-codes.js</item>
+        <item type="file">Magento_Checkout::js/shopping-cart.js</item>
+        <item type="file">Magento_Checkout::js/region-updater.js</item>
+        <item type="file">Magento_Checkout::js/sidebar.js</item>
+        <item type="file">Magento_Checkout::js/checkout-loader.js</item>
+        <item type="file">Magento_Checkout::js/checkout-data.js</item>
+        <item type="file">Magento_Checkout::js/proceed-to-checkout.js</item>
+        <item type="file">Magento_Checkout::js/proceed-to-checkout.js</item>
+        <item type="file">Magento_Downloadable::js/downloadable.js</item>
+        <item type="file">Magento_Payment::js/cc-type.js</item>
+        <item type="file">Magento_ProductVideo::js/load-player.js</item>
+        <item type="file">Magento_ProductVideo::js/fotorama-add-video-events.js</item>
+
+        <item type="file">Vertex_AddressValidation::js/billing-validation-mixin.js</item>
+        <item type="file">Vertex_AddressValidation::js/shipping-validation-mixin.js</item>
+        <item type="file">Vertex_AddressValidation::js/customer-validation-mixin.js</item>
+        
         <!-- End ALO optimizer -->
 
+        <item type="file">Lib::chartjs/Chart.min.js</item>
         <item type="file">Lib::jquery/jquery.min.js</item>
         <item type="file">Lib::jquery/jquery-ui-1.9.2.js</item>
         <item type="file">Lib::jquery/jquery.details.js</item>
