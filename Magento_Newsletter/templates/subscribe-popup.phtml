@@ -10,10 +10,11 @@
 ?>
 <?php
 $storeManager = \Magento\Framework\App\ObjectManager::getInstance()->get('\Magento\Store\Model\StoreManagerInterface');
-$urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$_aloHelper   = $this->helper('Magiccart\Alothemes\Helper\Data');
+$_image 	  =  $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'magiccart/newsletter/' . $_aloHelper->getConfigModule('newsletter/background_image');
 ?>
 <div class="block newsletter block-subscribe popup" style="display:none;">
-	<div id="popup-newsletter">
+	<div id="popup-newsletter" style="background-image:<?php echo $_image ?>">
         <form class="form subscribe"
             novalidate
             action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
@@ -44,8 +45,7 @@ $urlMedia = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterfac
 	                pwidth   = typeof pwidth  !== 'undefined' ? pwidth : 800;
 	                pheight  = typeof pheight !== 'undefined' ? pheight : 400;
 	                overlay  = typeof overlay !== 'undefined' ? overlay : '#363636';
-	                if(Themecfg.newsletter.background_image) popup.css('background-image', 'url(' + imageUrl + ')');
-	                else if(color) popup.css('background-color', color);
+	                if(!Themecfg.newsletter.background_image && color) popup.css('background-color', color);
 	                setTimeout( function() {
                         modal({
                             type: 'popup',
