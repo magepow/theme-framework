@@ -11,7 +11,7 @@
 <?php
 $storeManager = \Magento\Framework\App\ObjectManager::getInstance()->get('\Magento\Store\Model\StoreManagerInterface');
 $_aloHelper   = $this->helper('Magiccart\Alothemes\Helper\Data');
-$_image 	  =  $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'magiccart/newsletter/' . $_aloHelper->getConfigModule('newsletter/background_image');
+$_image 	  = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'magiccart/newsletter/' . $_aloHelper->getConfigModule('newsletter/background_image');
 ?>
 <div class="block newsletter block-subscribe popup" style="display:none;">
 	<div id="popup-newsletter" style="background-image:<?php echo $_image ?>">
@@ -38,7 +38,6 @@ $_image 	  =  $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterf
 	                var timeDelay = parseInt(Themecfg.newsletter.timeDelay);
 	                var autoClose = Themecfg.newsletter.autoClose;
 	                var timeClose = timeDelay + parseInt(Themecfg.newsletter.timeClose);
-	                var imageUrl = "<?php echo $urlMedia; ?>" + 'magiccart/newsletter/' + Themecfg.newsletter.background_image;
 	                var popup   = $('#popup-newsletter', $content);
 	                var pwidth  = Themecfg.newsletter.width;
 	                var pheight = Themecfg.newsletter.height;
