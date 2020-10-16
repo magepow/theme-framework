@@ -18,6 +18,12 @@
     $layout         = $_aloHelper->getConfigModule('product_page/page_layout');
     $pageLayout     = 'page-layout-' . $layout;
     if(!$layout) return;
+    $product        = $block->getProduct();
+    $settings       = $_aloHelper->getDesignSettings($product);
+    if ($settings->getPageLayout()) {
+        // use private custom page layout
+        return;
+    }
 ?>
 <script type="text/javascript">
 require([
