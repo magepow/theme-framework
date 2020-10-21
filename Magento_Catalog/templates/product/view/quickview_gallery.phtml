@@ -12,6 +12,12 @@
  * @var $block \Magento\Catalog\Block\Product\View\Gallery
  */
 ?>
+<?php
+$_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
+$_product   = $block->getProduct();
+$product_label = $_aloHelper->getLabels($_product); 
+echo $product_label ? '<div class="product-label">' . $product_label . '</div>' : ''; 
+?>
 <div class="gallery-placeholder _block-content-loading" data-gallery-role="gallery-placeholder">
     <div data-role="loader" class="loading-mask">
         <div class="loader">
