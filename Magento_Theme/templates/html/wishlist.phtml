@@ -1,13 +1,23 @@
 <div class="top-link-product tool-padding">
     <span class="fa fa-heart icons wishlist-icons"></span>
-    <div class="wishlist">
+    <div class="link wishlist" data-bind="scope: 'wishlist'">
         <a title="<?php echo __('Wishlist'); ?>" href="<?php echo $this->getUrl('wishlist') ?>" target="_blank" class="icon btn-heart">
-            <span class="text-account text-bold block"><?php echo __('Wishlist'); ?></span>
-            <?php $counter = $this->helper('Magento\Wishlist\Helper\Data')->getItemCount() ?>
-            <?php /* if($counter): */ ?>
-            <span class="counter"><?php echo $counter > 0 ? $counter:0; ?></span>
-            <?php /* endif; */ ?>
-            <span class="text-account text-hidden"><?php echo __('item(s)'); ?></span>
+            <span data-bind="text: '<?php echo __('Wishlist'); ?>'" class="text-account text-bold block"></span>
+            <span data-bind="text: wishlist().counter ? wishlist().counter : '0 item'" class="counter qty"></span>
         </a>
     </div>
 </div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "wishlist": {
+                        "component": "Magento_Wishlist/js/view/wishlist"
+                    }
+                }
+            }
+        }
+    }
+
+</script>

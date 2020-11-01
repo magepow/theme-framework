@@ -37,7 +37,7 @@
                         <argument name="css_class" xsi:type="string">Account links</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Framework\View\Element\Template" name="top.wishlist" as="topWishlist" template="Magento_Theme::html/wishlist.phtml" cacheable="false" />
+                <block class="Magento\Wishlist\Block\Link" name="top.wishlist" as="topWishlist" template="Magento_Theme::html/wishlist.phtml" />
                 <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="switch/stores.phtml"/>
             </block>
         </referenceContainer>
