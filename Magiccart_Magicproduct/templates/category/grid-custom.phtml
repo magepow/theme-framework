@@ -6,7 +6,6 @@
 use Magento\Framework\App\Action\Action;
 
 // @codingStandardsIgnoreFile
-die('0');
 ?>
 <?php
 /**
@@ -24,28 +23,14 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
 <?php if (!$_productCollection->count()): ?>
     <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
 <?php else: ?>
-    <?php //echo $block->getToolbarHtml() ?>
-    <?php //echo $block->getAdditionalHtml() ?>
     <?php
-    // if ($block->getMode() == 'grid') {
-        $viewMode = 'grid';
-        $image = 'category_page_grid';
-        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
-    // } else {
-    //     $viewMode = 'list';
-    //     $image = 'category_page_list';
-    //     $showDescription = true;
-    //     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
-    // }
-    /**
-     * Position for actions regarding image size changing in vde if needed
-     */
+    $viewMode = 'grid';
+    $image = 'category_page_grid';
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
     $pos = $block->getPositioned();
     ?>
     <?php 
-        $config     = $this->getWidgetCfg(); 
-        // $width      = $config['widthImages'];
-        // $height     = $config['heightImages'];
+        $config     = $this->getWidgetCfg();
         $showCart       = $config['cart'];
         $showCompare    = $config['compare'];
         $showWishlist   = $config['wishlist'];
@@ -66,10 +51,9 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
                             . 'top:' . $productImage->getHeight() . 'px;"';
                     }
                     ?>
-                    <?php // Product Image ?>
                     <div class="images-container xs-no-p col-lg-5 col-md-5 col-sm-5">
                         <div class="product-hover">
-                            <?php //echo $_aloHelper->getTimer($_product); ?>
+                            <?php /* echo $_aloHelper->getTimer($_product); */ ?>
                             <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
                                 <?php echo $productImage->toHtml(); ?>
                             </a>
@@ -159,7 +143,6 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
             <?php endforeach; ?>
         </ol>
     </div>
-    <?php // echo $block->getToolbarHtml() ?>
     <?php if (!$block->isRedirectToCartEnabled()) : ?>
         <script type="text/x-magento-init">
         {
