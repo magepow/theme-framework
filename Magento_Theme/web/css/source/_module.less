@@ -330,13 +330,16 @@ body {
 
 & when (@media-common = true) {
 
-.no-display {
-    &:extend(.abs-no-display all);
-}
+    .no-display {
+        &:extend(.abs-no-display all);
+    }
 
-// Calendar
-.ui-datepicker td {
-    padding: 0;
-}
-
+    // Calendar
+    .ui-datepicker td {
+        padding: 0;
+    }
+    // click out close modal
+    .modal-popup {
+         pointer-events: none;
+    }
 }
