@@ -1,17 +1,8 @@
 <?php
-/**
- * Copyright © 2019 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-// @codingStandardsIgnoreFile
-
-
-?>
-<?php
-$storeManager = \Magento\Framework\App\ObjectManager::getInstance()->get('\Magento\Store\Model\StoreManagerInterface');
 $_aloHelper   = $this->helper('Magiccart\Alothemes\Helper\Data');
-$_image 	  = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'magiccart/newsletter/' . $_aloHelper->getConfigModule('newsletter/background_image');
+$_image 	  = $_aloHelper->getConfigModule('newsletter/background_image');
+if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('\Magento\Store\Model\StoreManagerInterface')->getStore()
+						->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'magiccart/newsletter/' . $_aloHelper->getConfigModule('newsletter/background_image');
 ?>
 <div class="block newsletter block-subscribe popup" style="display:none;">
 	<div id="popup-newsletter" style="background-image:url('<?php echo $_image ?>')">
