@@ -33,7 +33,7 @@ $drawExtraMenu = $vmenu['extraCat'] ? $this->drawExtraMenu() : '';
 
 ?>
 
-<div class="vmagicmenu clearfix">
+<div class="vmagicmenu clearfix" <?php echo $vmenu['exclude_html_mobile'] ? 'data-exclude_html_mobile="1"' : '' ?> >
     <div class="block-title block-title-vmagicmenu v-title">
         <strong>
             <span class="icon-menu">
