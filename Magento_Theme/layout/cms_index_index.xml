@@ -7,6 +7,13 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceContainer name="slide.showcase">
+            <block class="Magento\Cms\Block\Block" name="slide">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">slide-home</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
     	<referenceContainer name="page.top">
     		<block class="Magento\Cms\Block\Block" name="block_page_top"> 
 		        <arguments> 
