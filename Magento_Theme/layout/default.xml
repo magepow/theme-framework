@@ -28,9 +28,9 @@
                 </block>
                 <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml"/>
                 <block class="Magento\Theme\Block\Html\Header" name="welcometop" template="html/welcome.phtml" as="welcometop">
-                     <arguments>
-                      <argument name="show_part" xsi:type="string">welcome</argument>
-                     </arguments>
+                    <arguments>
+                        <argument name="show_part" xsi:type="string">welcome</argument>
+                    </arguments>
                 </block>
                 <block class="Magento\Framework\View\Element\Html\Links" name="account.links" template="Magento_Theme::html/account.phtml" cacheable="true">
                     <arguments>
@@ -101,7 +101,7 @@
         <referenceBlock name="report.bugs" remove="true"/>
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="form.subscribe" remove="true"/>
-        <referenceBlock name="store.links" remove="true"/>
+        <!-- <referenceBlock name="store.links" remove="true"/> -->
         <!-- <referenceBlock name="store_switcher" remove="true"/> -->
         <!-- <referenceContainer name="footer" remove="true"/> -->
     </body>
