@@ -279,7 +279,7 @@
 
         <!-- Mageplaza optimizer -->
         <item type="directory">Mageplaza_Core::js</item>
-        <item type="directory">Mageplaza_Reports::js
+        <item type="directory">Mageplaza_Reports::js</item>
 
         <!-- ALO optimizer -->
 
