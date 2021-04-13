@@ -266,6 +266,21 @@
         <var name="bundle_size">1MB</var>
     </vars>
     <exclude>
+
+        <!-- IWD optimizer -->
+        <item type="directory">IWD_All::js</item>
+        <item type="directory">IWD_Opc::js</item>
+
+        <!-- Lof optimizer -->
+        <item type="directory">Lof_All::js</item>
+
+        <!-- Magefan optimizer -->
+        <item type="directory">Magefan_Blog::js</item>
+
+        <!-- Mageplaza optimizer -->
+        <item type="directory">Mageplaza_Core::js</item>
+        <item type="directory">Mageplaza_Reports::js
+
         <!-- ALO optimizer -->
 
         <item type="file">Magepow_InfiniteScroll::js/plugins/infinitescroll.min.js</item>
@@ -289,7 +304,6 @@
         <item type="directory">Amazon_Payment::js</item>
         <item type="directory">Klarna_Kp::js</item>
         <item type="directory">Klarna_Onsitemessaging::js</item>
-        <item type="directory">Magefan_Blog::js</item>
         <item type="directory">Magento_Dhl::js</item>
         <item type="directory">Magento_Downloadable::js</item>
         <item type="directory">Magento_InstantPurchase::js</item>
