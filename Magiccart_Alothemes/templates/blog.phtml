@@ -20,7 +20,7 @@
     $imageWidth = 250;
     $imageHeight = 230;
 ?>
-<?php $selector = 'alo-content-'.rand(0,999999999); ?>
+<?php $selector = 'alo-content-'.uniqid(); ?>
 <?php if ( !$_postCollection->count() ) return; ?>
 <div class="<?php /* @escapeNotVerified */ echo $selector?> widget block block-recent-posts" data-bind="scope: 'recent-posts'">
     <div class="blogtabs block-title-tabs clearfix">
@@ -39,7 +39,7 @@
                     <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
                     <div class="post-ftimg-hld blog-image al-style-2 image-container hover-effect">
                         <a href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
-                            <img class="lazyload" data-src="<?php /* @escapeNotVerified */ echo $imageHelper->init($_post->getFeaturedImg())->resize($imageWidth, $imageHeight) ?>" alt="<?php echo $_postName ?>" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" />
+                            <img class="featured-img" src="<?php /* @escapeNotVerified */ echo $imageHelper->init($_post->getFeaturedImg())->resize($imageWidth, $imageHeight) ?>" alt="<?php echo $_postName ?>" />
                         </a>
                     </div>
                     <?php } ?>
