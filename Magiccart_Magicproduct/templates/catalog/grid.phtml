@@ -66,7 +66,7 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
                                 <?php echo $productImage->toHtml(); ?>
                             </a>
                             <div class="link-view">
-                                <button type="button" class="quickview <?php echo $_product->getTypeId() ?>"  title="<?php echo $block->escapeHtml(__('Quick View')); ?>" onclick="jQuery.fn.quickview({url:'<?php echo $this->getUrl('alothemes/product/view', array('id' => $_product->getId(), '_type' => 'direct_link', '_secure'=>$this->getRequest()->isSecure()) ) ?>'});"><span><i class="fa fa-eye icons"></i><?php echo __('Quick View')?></span>
+                                <button type="button" class="quickview <?php echo $_product->getTypeId() ?>"  title="<?php echo $block->escapeHtml(__('Quick View')); ?>" onclick="jQuery.fn.quickview({url:'<?php echo $this->getUrl('alothemes/product/view', array('id' => $_product->getId(), '_secure'=>$this->getRequest()->isSecure()) ) ?>'});"><span><i class="fa fa-eye icons"></i><?php echo __('Quick View')?></span>
                                 </button>
                              </div>
                         </div>
