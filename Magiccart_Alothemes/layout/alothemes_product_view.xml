@@ -7,9 +7,9 @@
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="catalog_product_view" />
-	<body>
+    <body>
         <!-- <referenceContainer name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="page-main"/> -->
-		<referenceContainer name="div.sidebar.additional" remove="true"/>
+        <referenceContainer name="div.sidebar.additional" remove="true"/>
         <referenceContainer name="header.container" remove="true"/>
         <referenceContainer name="footer-container" remove="true"/>
         <referenceContainer name="sections.page.bottom" remove="true"/>
@@ -22,6 +22,7 @@
 
         <referenceBlock name="alothemes_header" remove="true"/>        
         <referenceBlock name="alothemes.recent.order" remove="true"/>
+        <referenceBlock name="product.info.previousnext" remove="true"/>
         <referenceBlock name="sizeguide" remove="true"/>
         <referenceBlock name="stickycart" remove="true"/>
         <referenceBlock name="product.info.blog.relatedposts" remove="true"/>
@@ -29,5 +30,5 @@
         <referenceContainer name="product.info.media">
             <referenceBlock name="product.info.media.image" template="product/view/quickview_gallery.phtml"/>
         </referenceContainer>
-	</body>
+    </body>
 </page>
