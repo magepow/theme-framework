@@ -35,7 +35,7 @@ button {box-shadow: none !important;}
 /*.post-list a {color: #222222;text-decoration: none;}*/
 /*.post-list a:hover {color: #006bb4;text-decoration: none;}*/
 
-.post-list {margin-top: 0px;margin-bottom: 20px;list-style: none;padding-left: 0}
+/* .post-list {margin-top: 0px;margin-bottom: 20px;list-style: none;padding-left: 0} */
 .post-list .post-item.post-holder {padding: 0 15px 0 0;margin-bottom: 30px;}
 .post-list .post-container {display: -ms-flexbox;display: flex;}
 
@@ -61,7 +61,7 @@ button {box-shadow: none !important;}
 .post-list .post-info .post-data-wrap .post-date {font-size: 11px;color: #bbbbbb;}
 .post-list .post-info .post-data-wrap a {font-weight: 600;}
 /* Post Description */
-.post-list .post-description {color: #7d7d7d;line-height: 21px;font-size: 13px;}
+/* .post-list .post-description {color: #7d7d7d;line-height: 21px;font-size: 13px;} */
 /* Post View */
 .post-list .post-view {display: block;background: #000;color: #fff;font-size: 10px;font-weight: 600;text-align: center;line-height: 11px;position: relative;top: -5px;padding: 4px 6px;}
 .post-list .post-view:after {position: absolute;left: 0;bottom: -3px;content: '';width: 0;height: 0;border-style: solid;border-width: 3px 3px 0 0;border-color: #000 transparent transparent;}
@@ -113,7 +113,7 @@ button {box-shadow: none !important;}
 .blog-post-view .post-data-wrap a {font-weight: 600;}
 .blog-post-view .post-data {color: #bbbbbb;}
 /* Post View */
-.blog-post-view .post-view {font-size: 13px;font-weight: 600;}
+/* .blog-post-view .post-view {font-size: 13px;font-weight: 600;} */
 /* Post Comments */
 .blog-post-view .post-comments {margin-right: 20px;}
 /* Social */
@@ -187,7 +187,7 @@ button {box-shadow: none !important;}
 .widget.blog-search .block-content .form {position: relative;}
 .widget.blog-search  label {border: 0;clip: rect(0, 0, 0, 0);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;text-decoration: none;display: inline-block;float: right;}
 .widget.blog-search .control {border-top: 0;margin: 0;padding: 0;clear: both;}
-.widget.blog-search input {position: static;padding-right: 35px;margin: 0;left: -300%;border: 1px solid #bbbbbb;}
+/* .widget.blog-search input {position: static;padding-right: 35px;margin: 0;left: -300%;border: 1px solid #bbbbbb;} */
 .widget.blog-search .action.search > span {border: 0;clip: rect(0, 0, 0, 0);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}
 /*.blog-search .actions .action.search {background: #222222;right: 0;padding: 0 10px;border-radius: 0;}*/
 
@@ -209,7 +209,7 @@ button {box-shadow: none !important;}
 /* END Posts List */
 
 /* Archive */
-.widget.block-archive .archive-item-link {font-weight: 600}
+/* .widget.block-archive .archive-item-link {font-weight: 600} */
 
 /* RSS Feed */
 .widget.block-rss .rss-icon {width: 23px;filter: grayscale(100%);vertical-align: middle;}
@@ -222,7 +222,7 @@ button {box-shadow: none !important;}
 .post-content .post-description ul,
 .post-content .post-description ol {list-style-position: inside;}
 
-.post-content .post-description .post-ftimg-hld {margin: 0 0 20px 0;}
+
 .post-content .post-description .post-ftimg-hld img {width:100%; padding:0; margin:0;}
 
 .post-list .post-header .post-title {max-width:80%;}
@@ -244,28 +244,15 @@ button {box-shadow: none !important;}
 .post-view .post-gallery .gallery-image{padding: 0; margin:0; display:block}
 
 .post-view .block {margin-bottom: 30px;}
-
-.widget.block-categories ul {
-    list-style: initial;
-    padding-left:0;
-}
-
 .widget.block-categories ul ul {
     margin-left:20px;
 }
-
-.widget.block-categories ul,
-.widget.block-categories li {
-    margin: 5px 0 5px 9px;
-    padding: 0;
-}
-
 /* Tag cloud widget */
-.widget.block-tagclaud .smallest{font-size: 0.75em}
+/* .widget.block-tagclaud .smallest{font-size: 0.75em}
 .widget.block-tagclaud .small{font-size:1em}
 .widget.block-tagclaud .medium{font-size:1.25em}
 .widget.block-tagclaud .large{font-size:1.5em}
-.widget.block-tagclaud .largest{font-size:2em}
+.widget.block-tagclaud .largest{font-size:2em} */
 
 .blog-widget-recent .post-list {
     padding: 0;
@@ -326,34 +313,17 @@ button {box-shadow: none !important;}
 
 
 /* Posts List */
-.widget.block-list-posts .block-content .item {
+/* .widget.block-list-posts .block-content .item {
     padding: 8px 0 0 0;
-}
-.widget.block-list-posts .block-content .item .post-image {
-    width: 60px;
-    float: left;
-    border-radius: 0;
-    padding: 2px;
-    background-color: #fff;
-    border: 1px solid #e9e9e9;
-    margin-right: 12px;
-}
-.widget.block-list-posts .block-content .item .post-image .post-item-link {
-    display: inline-block;
-}
-.widget.block-list-posts .block-content .item .post-image .post-item-link img {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-}
+} */
 /* END Posts List */
 
 /* Fix Related Products */
-.blog-post-view .products-grid .product-item {
+/* .blog-post-view .products-grid .product-item {
     display: inline-block;
     margin-left: 2%;
     width: calc((100% - 2%)/2);
-}
+} */
 .blog-post-view .product-item:nth-child(2n+1) {
     margin-left: 0;
 }
@@ -361,26 +331,26 @@ button {box-shadow: none !important;}
     width: auto;
 }
 @media (min-width: 640px){
-    .blog-post-view .products-grid .product-item {
+    /* .blog-post-view .products-grid .product-item {
         display: inline-block;
         margin-left: 2%;
         width: calc((100% - 4%)/3);
-    }
-    .blog-post-view .products-grid .product-item:nth-child(2n+1) {
+    } */
+    /* .blog-post-view .products-grid .product-item:nth-child(2n+1) {
         margin-left: 2%;
-    }
+    } */
     .blog-post-view .products-grid .product-item:nth-child(3n+1) {
         margin-left: 0;
     }
 }
 @media (min-width: 1024px){
-    .blog-post-view .products-grid .product-item {
+    /* .blog-post-view .products-grid .product-item {
         width: calc((100% - 8%)/5);
         margin-left: 2%;
-    }
-    .blog-post-view .products-grid .product-item:nth-child(3n+1) {
+    } */
+    /* .blog-post-view .products-grid .product-item:nth-child(3n+1) {
         margin-left: 2%;
-    }
+    } */
     .blog-post-view .products-grid .product-item:nth-child(5n+1) {
         margin-left: 0;
     }
