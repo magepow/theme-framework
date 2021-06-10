@@ -38,14 +38,16 @@ if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('
 						overlay  = typeof overlay !== 'undefined' ? overlay : '#363636';
 						if(!Themecfg.newsletter.background_image && color) popup.css('background-color', color);
 						setTimeout( function() {
-							modal({
-								type: 'popup',
-								modalClass: 'popup-newsletter',
-								responsive: true, 
-								buttons: false                       	
-							}, popup);
-							popup.modal('openModal');
-							$(".modal-popup .modal-inner-wrap").css({ "width":pwidth, "height":pheight }); 
+							if(!$('body').hasClass('_has-modal')){
+								modal({
+									type: 'popup',
+									modalClass: 'popup-newsletter',
+									responsive: true, 
+									buttons: false                       	
+								}, popup);
+								popup.modal('openModal');
+								$(".modal-popup.popup-newsletter .modal-inner-wrap").css({ "width":pwidth, "height":pheight }); 
+							}
 						}, timeDelay);
 						if(Themecfg.newsletter.autoClose > 0) setTimeout(function(){ popup.modal('closeModal') }, timeClose);
 						$('.subscribe-bottom input', popup).on('click', function(){
