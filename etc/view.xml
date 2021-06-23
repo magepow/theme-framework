@@ -283,17 +283,16 @@
 
         <!-- ALO optimizer -->
 
-        <item type="file">Magepow_InfiniteScroll::js/plugins/infinitescroll.min.js</item>
-        <item type="file">Magepow_Layerednav::js/layerednav.min.js</item>
-        <item type="file">Magepow_Productzoom::js/plugins/jquery.elevatezoom.min.js</item>
-        <item type="file">Magepow_Stickycart::js/stickycart.min.js</item>
+        <item type="directory">Magepow_InfiniteScroll::js</item>
+        <item type="directory">Magepow_Layerednav::js</item>
+        <item type="directory">Magepow_Productzoom::js</item>
+        <item type="directory">Magepow_Stickycart::js</item>
+        <item type="directory">Magiccart_Lookbook::js</item>
 
         <item type="file">Magiccart_Alothemes::js/plugins/bootstrap.min.js</item>
         <item type="file">Magiccart_Alothemes::js/plugins/wow.min.js</item>
         <item type="file">Magiccart_Alothemes::js/plugins/sticky-kit.min.js</item>
         <item type="file">Magiccart_Alothemes::js/plugins/jquery.elevatezoom.min.js</item>
-        <item type="file">Magiccart_Lookbook::js/jquery.easypin.min.js</item>
-        <item type="file">Magiccart_Lookbook::js/lookbook.min.js</item>
         <item type="file">Magiccart_Magicproduct::js/plugins/slick.min.js</item>
         <item type="file">Magiccart_Testimonial::js/plugins/slick.min.js</item>
 
