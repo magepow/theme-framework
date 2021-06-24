@@ -25,6 +25,7 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
         <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/limiter.phtml')) ?>
 		<?php echo $block->getPagerHtml() ?>
         <?php if ($block->isExpanded()): ?>
+            <?php include ($block->getTemplateFile('Magiccart_Alothemes::product/list/toolbar/grid-view.phtml')) ?>
             <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode.phtml')) ?>
         <?php endif; ?>
     </div>
