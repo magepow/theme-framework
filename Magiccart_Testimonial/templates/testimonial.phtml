@@ -1,15 +1,15 @@
 <?php
 if(!$this->getEnabled()) return;
-$selector = 'alo-content-'.rand(0,999999999);
+$selector = 'alo-content-'.uniqid();
 $testimonials = $this->getTestimonials();
 if(!count($testimonials)) return;
 ?>
-<div class="<?php /* @escapeNotVerified */ echo $selector ?>">
+<div class="<?php /* @escapeNotVerified */ echo $selector ?>" data-mage-init='{"gridSlider": {}}' >
    <div class="block-testimonial">
         <?php echo $this->getTitle() ? '<h3 class="block-title title item">' . '<span>' . $this->escapeHtml($this->getTitle()) . '</span>' . '</h3>' : '' ?>
 	</div>
    <div class="block-content">
-		<div class="testimonial"
+		<div class="testimonial grid-slider"
 			data-fade='true'
 		<?php foreach ($this->getFrontendCfg() as $opt) :?>
 			data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getData($opt) ?>'
@@ -38,13 +38,3 @@ if(!count($testimonials)) return;
 	</div>
 </div>
 
-<script type="text/javascript">
-    require([
-        'jquery',
-        'magiccart/slick',
-        'alothemes',
-        ], function($, slick, alothemes){
-            var testimonial  = $('.<?php echo $selector ?> .testimonial');
-            if(testimonial.length) $('head').append(magicproduct(testimonial, '.item'));
-    });
-</script>
