@@ -19,9 +19,9 @@ $helper = $this->helper(\Magento\Search\Helper\Data::class);
                 <?php 
                     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
                     $config = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('alothemes/categorysearch', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-                    $catalogsearch = isset($config['enabled']) ? $config['enabled'] : 0;
-                    $depth       = isset($config['depth'])   ? $config['depth']   : 0;
-          
+                    $catalogsearch = isset($config['enabled'])      ? $config['enabled'] : 0;
+                    $depth         = isset($config['depth'])        ? $config['depth']   : 0;
+                    $levelSymbol   = isset($config['level_symbol']) ? $config['level_symbol'] : '';          
                 ?>
                 <div class="control <?php echo $catalogsearch ? 'catalogsearch' : ''?>">
                       <input id="search"
@@ -51,7 +51,7 @@ $helper = $this->helper(\Magento\Search\Helper\Data::class);
                             <?php
                             if($depth) $depth ++;
                               $categoryFactory = $objectManager->create('Magiccart\Alothemes\Model\System\Config\CatalogSearch');
-                                $categories = $categoryFactory->toOptionArray($depth);
+                                $categories = $categoryFactory->toOptionArray($depth, $levelSymbol);
                                 echo '<li data-q="0">' . __('All Categories') . '</li>';
                                 foreach ($categories as $category){
                                   echo '<li data-q="'.$category['value'].'" class="' . $category['class'] . '">' . $category['label'] . '</li>';
