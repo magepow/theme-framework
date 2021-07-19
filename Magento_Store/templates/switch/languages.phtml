@@ -16,8 +16,8 @@
 <?php $flags = $block->getFlags();?>
 <?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
 <?php 
-    $flag = isset($flags[$block->getStoreId()]) ? $flags[$block->getStoreId()] :  $block->getViewFileUrl(('images/flags/'. $block->getStoreCode() .'.jpg'));
-    $flag = 'style="background-image:url('. $flag .');background-repeat"no-repeat;"'; 
+    $flag = isset($flags[$block->getCurrentStoreId()]) ? $flags[$block->getCurrentStoreId()] :  $block->getViewFileUrl(('images/flags/'. $block->getStoreCode() .'.jpg'));
+    $flag = 'style="background-image:url('. $flag .');background-repeat:no-repeat;"'; 
 ?>
 <div class="top-form-language">
 <div class="switcher language switcher-language" data-ui-id="language-switcher" id="switcher-language<?php /* @escapeNotVerified */ echo $id?>">
@@ -40,7 +40,7 @@
                 <?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
                     <?php
                         $flag = isset($flags[$_lang->getStoreId()]) ? $flags[$_lang->getId()] :  $block->getViewFileUrl(('images/flags/'. $_lang->getCode() .'.jpg'));
-                        $flag = 'style="background-image:url('. $flag .');background-repeat"no-repeat;"'; 
+                        $flag = 'style="background-image:url('. $flag .');background-repeat:"no-repeat;"'; 
                     ?>
                     <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
                         <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_lang); ?>' <?php echo $flag ?>>
