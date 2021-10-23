@@ -16,8 +16,8 @@ if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('
     </div>
 </div>
 <script type="text/javascript">
-	require(['jquery', 'jquery/jquery.cookie', 'Magento_Ui/js/modal/modal'], 
-		function($, cookie, modal){
+	require(['jquery', 'jquery/jquery.cookie', 'Magento_Ui/js/modal/modal', 'Magento_Customer/js/customer-data'], 
+		function($, cookie, modal, customerData){
 			"use strict";
 			$('body').one('mousemove', function() { 
 				if(!parseInt(Themecfg.newsletter.enabled)) return;
@@ -70,19 +70,24 @@ if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('
 						});
 					} else {
 						if($.cookie('popupNewsletterMessages')){
-							setTimeout(function () {
+							var messages = $.cookieStorage.get('mage-messages');
+							if(messages.length){
 								var $messages = $('.messages').attr('id', 'popupNewsletterMessages').wrap( "<div></div>" );
-								modal({
-									type: 'popup',
-									modalClass: 'popup-messages',
-									responsive: true, 
-									buttons: false                       	
-								}, $messages);
-								$messages.modal('openModal');
-								
-								$.cookie('popupNewsletterMessages', '', {domain: document.domain});
-							}, 1000);
-						
+								setTimeout(function () {
+									modal({
+										type: 'popup',
+										modalClass: 'popup-messages',
+										responsive: true, 
+										buttons: false                       	
+									}, $messages);
+									$messages.modal('openModal');
+									
+									$.cookie('popupNewsletterMessages', '', {domain: document.domain});
+								}, 1000);
+								setTimeout(function () {
+									$messages.modal('closeModal');
+								}, 5000);
+							}
 						}
 					}
 
