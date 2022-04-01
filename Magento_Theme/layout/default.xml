@@ -19,12 +19,6 @@
                         <argument name="css_class" xsi:type="string">links header</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
-                    <arguments>
-                        <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
-                        <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
-                    </arguments>
-                </block>
                 <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml"/>
                 <block class="Magento\Theme\Block\Html\Header" name="welcometop" template="html/welcome.phtml" as="welcometop">
                     <arguments>
