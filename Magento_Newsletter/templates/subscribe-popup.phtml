@@ -20,7 +20,7 @@ if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('
 		function($, cookie, modal, customerData){
 			"use strict";
 			$('body').one('mousemove', function() { 
-				if(!parseInt(Themecfg.newsletter.enabled)) return;
+				if(typeof Themecfg === 'undefined' || !parseInt(Themecfg.newsletter.enabled)) return;
 				(function(selector){
 					var popupCookie = $.cookie('popupNewsletterOff');
 					var overlay = Themecfg.newsletter.overlayColor;
