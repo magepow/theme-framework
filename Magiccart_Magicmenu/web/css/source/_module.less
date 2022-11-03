@@ -9,6 +9,56 @@
  * @@Function:*/
 
  & when (@media-common = true) {
+   .magicmenu {
+      .nav-desktop {
+         &.click {
+            .level0{
+               &:hover{
+                  .level-top-mega{
+                     opacity: 0;
+                     visibility: hidden;
+                     top: 130%;
+                  }
+               }
+
+               &.over {
+                  .level-top-mega {
+                     opacity: 1;
+                     top: 100%;
+                     visibility: visible;
+                  }
+               }
+
+               &.dropdown{
+                  &:hover{
+                     >.level0{
+                        opacity: 0;
+                        visibility: hidden;
+                        top: 130%;
+                     }
+                  }
+
+                  &.over{
+                     >.level0{
+                        opacity: 1;
+                        visibility: visible;
+                        top: 100%;
+                     }
+                  }
+
+                  .hasChild{
+                     &.over {
+                        >ul {
+                           opacity: 1;
+                           visibility: visible;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
     .sections .nav-sections-item-content > .navigation{display: none;}
     .nav-sections-item-content .magicmenu{position:relative;display:block;text-align: left;background-color: #e9e9e9;}
     .magicmenu{position: relative;}
