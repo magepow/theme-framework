@@ -41,6 +41,7 @@
                 </arguments>
             </block>
         </referenceContainer>
+        <move element="alothemes_header" destination="header-wrapper"/>
         <move element="catalog.compare.link" destination="alothemes_header"/>
         <move element="minicart" destination="alothemes_header"/>
         <move element="top.search" destination="alothemes_header"/>
@@ -88,9 +89,9 @@
                 </container>
             </container>
         </referenceContainer>
-        <referenceContainer name="header.container" remove="true"/>
+        <!-- <referenceContainer name="header.container" remove="true"/> -->
         <referenceContainer name="header.panel" remove="true"/>
-        <referenceContainer name="header-wrapper" remove="true"/>
+        <!-- <referenceContainer name="header-wrapper" remove="true"/> -->
         <referenceBlock name="report.bugs" remove="true"/>
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="form.subscribe" remove="true"/>
