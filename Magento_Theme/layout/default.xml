@@ -7,7 +7,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="header-wrapper">
+        <referenceContainer name="page.wrapper">
             <block class="Magento\Theme\Block\Html\Header" name="alothemes_header" template="html/header.phtml" before="-">
                 <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
                     <arguments>
@@ -32,7 +32,7 @@
                 </block>
                 <block class="Magento\Wishlist\Block\Link" name="top.wishlist" as="topWishlist" template="Magento_Theme::html/wishlist.phtml" />
                 <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="switch/stores.phtml"/>
-            </block>       
+            </block>
         </referenceContainer>
         <referenceContainer name="alo.pagemenu">
             <block class="Magento\Cms\Block\Block" name="page_menu">
@@ -88,9 +88,9 @@
                 </container>
             </container>
         </referenceContainer>
-        <!-- <referenceContainer name="header.container" remove="true"/> -->
+        <referenceContainer name="header.container" remove="true"/>
         <referenceContainer name="header.panel" remove="true"/>
-        <!-- <referenceContainer name="header-wrapper" remove="true"/> -->
+        <referenceContainer name="header-wrapper" remove="true"/>
         <referenceBlock name="report.bugs" remove="true"/>
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="form.subscribe" remove="true"/>
