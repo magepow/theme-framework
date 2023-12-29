@@ -7,7 +7,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="page.wrapper">
+        <referenceContainer name="header-wrapper">
             <block class="Magento\Theme\Block\Html\Header" name="alothemes_header" template="html/header.phtml" before="-">
                 <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
                     <arguments>
@@ -32,7 +32,7 @@
                 </block>
                 <block class="Magento\Wishlist\Block\Link" name="top.wishlist" as="topWishlist" template="Magento_Theme::html/wishlist.phtml" />
                 <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="switch/stores.phtml"/>
-            </block>
+            </block>       
         </referenceContainer>
         <referenceContainer name="alo.pagemenu">
             <block class="Magento\Cms\Block\Block" name="page_menu">
@@ -41,7 +41,6 @@
                 </arguments>
             </block>
         </referenceContainer>
-        <move element="alothemes_header" destination="header-wrapper"/>
         <move element="catalog.compare.link" destination="alothemes_header"/>
         <move element="minicart" destination="alothemes_header"/>
         <move element="top.search" destination="alothemes_header"/>
