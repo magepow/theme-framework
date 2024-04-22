@@ -25,7 +25,7 @@
 </div>
 <div class="search-overlay"></div>
 <script type="text/javascript">
-	require(['jquery', 'Magento_Customer/js/customer-data', 'jquery/ui'], function($, customerData) {
+	require(['jquery', 'Magento_Customer/js/customer-data', 'jquery-ui-modules/widget'], function($, customerData) {
 		'use strict';
 		$('body').addClass('toolbar-mobile-true');
 		customerData.get('cart').subscribe(function (cartInfo) {
