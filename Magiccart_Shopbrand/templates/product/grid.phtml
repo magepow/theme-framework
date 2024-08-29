@@ -84,7 +84,7 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
                         <?php if ($showWishlist || $showCompare || $showCart): ?>
                             <div class="hover-box clearfix">
                                 <div class="product-item-inner actions clearfix">
-                                <div class="product product-item-actions"<?php echo strpos($pos, $viewMode . '-actions') ? $position : ''; ?>>
+                                <div class="product product-item-actions"<?php echo strpos((string)$pos, $viewMode . '-actions') ? $position : ''; ?>>
                                     <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
                                     <?php if ($showCart): ?>
                                         <div class="actions-primary actions-cart"<?php echo strpos($pos, $viewMode . '-primary') ? $position : ''; ?>>

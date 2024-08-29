@@ -80,7 +80,7 @@
                             <?php
                             $element = 'swatchImageOption' .$escaper->escapeJs($option);
                             $backgroundValue = $escaper->escapeJs(
-                                str_replace('\'', '\\\'', $swatchData['swatches'][$option]['value'])
+                                str_replace('\'', '\\\'', (string) $swatchData['swatches'][$option]['value'])
                             );
                             $script = 'var ' .$element
                                 .' = document.querySelector(\'div[data-option-id="' .$escaper->escapeJs($option)
