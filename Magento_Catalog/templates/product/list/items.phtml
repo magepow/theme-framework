@@ -186,7 +186,7 @@ switch ($type = $block->getType()) {
         <?php if ($type == 'related' && $canItemsAddToCart): ?>
         <div class="block-actions block-subtitle">
             <?php /* @escapeNotVerified */ echo __('Check items to add to the cart or') ?>
-            <button type="button" class="action select" role="select-all"><span><?php /* @escapeNotVerified */ echo __('select all') ?></span></button>
+            <button type="button" class="action select" data-role="select-all"><span><?php /* @escapeNotVerified */ echo __('select all') ?></span></button>
         </div>
         <?php endif; ?>
         <div class="auto-height">
