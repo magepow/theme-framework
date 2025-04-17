@@ -14,6 +14,12 @@ $isRTL = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface'
     <head <?= /* @noEscape */ $headAttributes ?>>
         <?= /* @noEscape */ $requireJs ?>
         <?= /* @noEscape */ $headContent ?>
+        <?php if (isset($headCritical)) : ?>
+            <?= /* @noEscape */ $headCritical ?>
+        <?php endif; ?>
+        <?php if (isset($headAssets)) : ?>
+            <?= /* @noEscape */ $headAssets ?>
+        <?php endif; ?>
         <?= /* @noEscape */ $headAdditional ?>
     </head>
     <body data-container="body"
