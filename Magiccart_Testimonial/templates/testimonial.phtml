@@ -10,7 +10,6 @@ if(!count($testimonials)) return;
 	</div>
    <div class="block-content">
 		<div class="testimonial grid-slider"
-			data-fade='true'
 		<?php foreach ($this->getFrontendCfg() as $opt) :?>
 			data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getData($opt) ?>'
 		<?php endforeach;?>  
