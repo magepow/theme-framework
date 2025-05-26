@@ -1,7 +1,7 @@
 <?php
 $_aloHelper   = $this->helper('Magiccart\Alothemes\Helper\Data');
 $_image 	  = $_aloHelper->getConfigModule('newsletter/background_image');
-if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('\Magento\Store\Model\StoreManagerInterface')->getStore()
+if($_image) $_image = $_aloHelper->getStoreManager()->getStore()
 						->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'magiccart/newsletter/' . $_aloHelper->getConfigModule('newsletter/background_image');
 ?>
 <div class="block newsletter block-subscribe popup" style="display:none;">
@@ -22,17 +22,17 @@ if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('
 			$('body').one('mousemove', function() { 
 				if(typeof Themecfg === 'undefined' || !parseInt(Themecfg.newsletter.enabled)) return;
 				(function(selector){
-					var popupCookie = $.cookie('popupNewsletterOff');
-					var overlay = Themecfg.newsletter.overlayColor;
+					var popupCookie = $.cookie('popupNewsletterOff'),
+						overlay = Themecfg.newsletter.overlayColor;
 					if(!popupCookie || popupCookie == 'undefined'){
-						var $content = $(selector);
-						var color   = Themecfg.newsletter.background_color;
-						var timeDelay = parseInt(Themecfg.newsletter.timeDelay);
-						var autoClose = Themecfg.newsletter.autoClose;
-						var timeClose = timeDelay + parseInt(Themecfg.newsletter.timeClose);
-						var popup   = $('#popup-newsletter', $content);
-						var pwidth  = Themecfg.newsletter.width;
-						var pheight = Themecfg.newsletter.height;
+						var $content = $(selector),
+							color   = Themecfg.newsletter.background_color,
+							timeDelay = parseInt(Themecfg.newsletter.timeDelay),
+							autoClose = Themecfg.newsletter.autoClose,
+							timeClose = timeDelay + parseInt(Themecfg.newsletter.timeClose),
+							popup   = $('#popup-newsletter', $content),
+							pwidth  = Themecfg.newsletter.width,
+							pheight = Themecfg.newsletter.height;
 						pwidth   = typeof pwidth  !== 'undefined' ? pwidth : 800;
 						pheight  = typeof pheight !== 'undefined' ? pheight : 400;
 						overlay  = typeof overlay !== 'undefined' ? overlay : '#363636';
@@ -42,10 +42,10 @@ if($_image) $_image = \Magento\Framework\App\ObjectManager::getInstance()->get('
 								modal({
 									type: 'popup',
 									modalClass: 'popup-newsletter',
-									responsive: true, 
-									buttons: false                       	
+									responsive: true,
+									autoOpen: true,
+									buttons: false            	
 								}, popup);
-								popup.modal('openModal');
 								$(".modal-popup.popup-newsletter .modal-inner-wrap").css({ "width":pwidth, "height":pheight }); 
 							}
 						}, timeDelay);
