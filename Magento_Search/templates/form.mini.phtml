@@ -93,7 +93,7 @@ $helper = $this->helper(\Magento\Search\Helper\Data::class);
                             var search = document.getElementById("search");
                             var qsearch = document.getElementById("qsearch");
                             var csearch = qsearch.value ? '&cat='+qsearch.value : '';
-                            window.location = form.action + '/?q=' + search.value + csearch;
+                            window.location = form.action + '?q=' + search.value + csearch;
                               return false;
                           };
                         };
