@@ -25,6 +25,8 @@
         <referenceBlock name="product.info.previousnext" remove="true"/>
         <referenceBlock name="sizeguide" remove="true"/>
         <referenceBlock name="stickycart" remove="true"/>
+        <referenceBlock name="campaignbar.header" remove="true"/>
+        <referenceBlock name="campaignbar.footer" remove="true"/>
         <referenceBlock name="product.info.blog.relatedposts" remove="true"/>
 
         <referenceContainer name="product.info.media">
