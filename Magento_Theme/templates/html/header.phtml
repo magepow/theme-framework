@@ -15,7 +15,7 @@
 $_lazyHelper = $this->helper('Magiccart\Alothemes\Helper\Lazyload');
 $_aloHelper  = $this->helper('Magiccart\Alothemes\Helper\Data');
 $header 	 = $_aloHelper->getConfigModule('design/header');
-$headerName  = basename($header, ".phtml");
+$headerName  = basename((string) $header, ".phtml");
 if($header && $headerName != 'header'){
 	$headerTemplate = 'html/' . $headerName . '.phtml';
 	echo $block->setTemplate($headerTemplate)->toHtml();
