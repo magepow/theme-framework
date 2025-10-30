@@ -1,4 +1,6 @@
 <?php
+$newsletter = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('newsletter_popup')->toHtml();
+if(!$newsletter) return;
 $_aloHelper   = $this->helper('Magiccart\Alothemes\Helper\Data');
 $_image 	  = $_aloHelper->getConfigModule('newsletter/background_image');
 if($_image) $_image = $_aloHelper->getStoreManager()->getStore()
@@ -11,7 +13,7 @@ if($_image) $_image = $_aloHelper->getStoreManager()->getStore()
             action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
             method="post"
             id="newsletter-popup-validate-detail">
-            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('newsletter_popup')->toHtml();?>
+            <?php echo $newsletter; ?>
         </form>
     </div>
 </div>
