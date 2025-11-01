@@ -10,7 +10,7 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
 $isRTL = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('alothemes/rtl/enabled',$storeScope);
 ?>
-<html class="<?php echo $isRTL ? 'rtl' : 'ltr'; ?>"  <?= /* @noEscape */ $htmlAttributes ?>>
+<html class="<?php echo $isRTL ? 'rtl' : 'ltr'; ?>" dir="<?php echo $isRTL ? 'rtl' : 'ltr'; ?>" <?= /* @noEscape */ $htmlAttributes ?>>
     <head <?= /* @noEscape */ $headAttributes ?>>
         <?= /* @noEscape */ $requireJs ?>
         <?= /* @noEscape */ $headContent ?>
