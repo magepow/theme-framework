@@ -24,7 +24,8 @@
 	
 </div>
 <div class="search-overlay"></div>
-<script type="text/javascript">
+<?php
+$scriptString = <<<'script'
 	require(['jquery', 'Magento_Customer/js/customer-data', 'jquery-ui-modules/widget'], function($, customerData) {
 		'use strict';
 		$('body').addClass('toolbar-mobile-true');
@@ -46,4 +47,6 @@
 			$('body').find('.action.nav-toggle').trigger('click');
 		})
 	});
-</script>
+script;
+?>
+<?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>
