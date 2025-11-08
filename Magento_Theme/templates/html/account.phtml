@@ -1,8 +1,6 @@
 <?php
-	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-	$customerSession = $objectManager->get('Magento\Customer\Model\Session');
-	$isLoggedIn = $customerSession->isLoggedIn();
-	$msg = $isLoggedIn ? __('Welcome') .', '. $customerSession->getCustomer()->getName() : $this->getWelcome();
+	$httpContext = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\App\Http\Context');
+	$isLoggedIn = $httpContext->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
 ?>
 <div class="dropdown-link">
 	<?php if( $isLoggedIn ) { ?>
