@@ -13,7 +13,6 @@
             novalidate
             action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
             method="post"
-            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
             id="newsletter-validate-detail">
 			<div class="block-content">
 				<div class="block-title">
@@ -40,3 +39,12 @@
 			</div>
         </form>
 </div>
+<script type="text/x-magento-init">
+{
+    "#newsletter-validate-detail": {
+        "validation": {
+            "errorClass": "mage-error"
+        }
+    }
+}
+</script>
